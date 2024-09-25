@@ -34,9 +34,9 @@ To begin, follow these steps:
    ```
 3. Run the Installer:
    - Use the following command to start the installation process:
-```bash
-./install.sh hydren
-```
+   ```bash
+   ./install.sh hydren
+   ```
 
 # Tutorial
 - Select an Option: After running the installer, you will be presented with a menu of installation options. Choose the project you wish to install by entering the corresponding number (1-4).
