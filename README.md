@@ -27,10 +27,13 @@ To begin, follow these steps:
 
 1. **Download the Installer**:
    - Clone the repository or download the `install.sh` script directly.
+   ```bash
+   git clone https://github.com/ma4z/Hosting-Creator.git && cd Hosting-Creator
+   ```
 
 2. **Make the Script Executable**:
    ```bash
-   chmod +x installer.sh
+   chmod +x install.sh
    ```
 3. Run the Installer:
    - Use the following command to start the installation process:
