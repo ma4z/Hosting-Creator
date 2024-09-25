@@ -23,81 +23,92 @@ display_installation_method_menu() {
     read -p "Enter your choice: " method_choice
 }
 
-while true; do
-    display_main_menu
-    case $choice in
-        1)
-            display_installation_method_menu "Skyport"
-            case $method_choice in
-                1)
-                    cd ~
-                    bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
-                    ;;
-                2)
-                    exit
-                    ;;
-                *)
-                    echo "Invalid choice"
-                    ;;
-            esac
-            ;;
-        2)
-            display_installation_method_menu "Skyportd"
-            read -p "Enter the Configure Command: " user_command
-            case $method_choice in
-                1)
-                    echo "Installing Skyportd ..."
-                    git clone https://github.com/skyportlabs/skyportd.git && cd skyportd
-                    npm install
-                    eval "$user_command"
-                    npm i -g pm2 
-                    pm2 start index.js --name daemon
-                    ;;
-                2)
-                    exit
-                    ;;
-                *)
-                    echo "Invalid choice"
-                    ;;
-            esac
-            ;;
-        3)
-            display_installation_method_menu "HydrenDashboard"
-            case $method_choice in
-                1)
-                    echo "Installing HydrenDashboard ..."
-                    bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
-                    ;;
-                2)
-                    exit
-                    ;;
-                *)
-                    echo "Invalid choice"
-                    ;;
-            esac
-            ;;
-        4)
-            display_installation_method_menu "HydrenDashboard-with-Skyport"
-            case $method_choice in
-                1)
-                    echo "Installing HydrenDashboard ..."
-                    bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
-                    echo "Installing Skyport"
-                    bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
-                    ;;
-                2)
-                    exit
-                    ;;
-                *)
-                    echo "Invalid choice"
-                    ;;
-            esac
-            ;;    
-        5)
-            exit
-            ;;
-        *)
-            echo "Invalid choice"
-            ;;
-    esac
-done
+run_installer() {
+    while true; do
+        clear
+        display_main_menu
+        case $choice in
+            1)
+                display_installation_method_menu "Skyport"
+                case $method_choice in
+                    1)
+                        cd ~
+                        bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
+                        ;;
+                    2)
+                        exit
+                        ;;
+                    *)
+                        echo "Invalid choice"
+                        ;;
+                esac
+                ;;
+            2)
+                display_installation_method_menu "Skyportd"
+                read -p "Enter the Configure Command: " user_command
+                case $method_choice in
+                    1)
+                        echo "Installing Skyportd ..."
+                        git clone https://github.com/skyportlabs/skyportd.git && cd skyportd
+                        npm install
+                        eval "$user_command"
+                        npm i -g pm2 
+                        pm2 start index.js --name daemon
+                        ;;
+                    2)
+                        exit
+                        ;;
+                    *)
+                        echo "Invalid choice"
+                        ;;
+                esac
+                ;;
+            3)
+                display_installation_method_menu "HydrenDashboard"
+                case $method_choice in
+                    1)
+                        echo "Installing HydrenDashboard ..."
+                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
+                        ;;
+                    2)
+                        exit
+                        ;;
+                    *)
+                        echo "Invalid choice"
+                        ;;
+                esac
+                ;;
+            4)
+                display_installation_method_menu "HydrenDashboard-with-Skyport"
+                case $method_choice in
+                    1)
+                        echo "Installing HydrenDashboard ..."
+                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
+                        echo "Installing Skyport"
+                        bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
+                        ;;
+                    2)
+                        exit
+                        ;;
+                    *)
+                        echo "Invalid choice"
+                        ;;
+                esac
+                ;;
+            5)
+                exit
+                ;;
+            *)
+                echo "Invalid choice"
+                ;;
+        esac
+        read -p "Press [Enter] to continue..."
+    done
+}
+
+# Add the command 'hydren' to run the installer
+if [ "$1" == "hydren" ]; then
+    run_installer
+else
+    echo "Usage: $0 hydren"
+fi
