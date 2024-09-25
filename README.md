@@ -21,24 +21,39 @@ The **🌐 Hydren Hosting Installer** is compatible with the following operating
 - **CentOS** (7 and later)
 - **Fedora** (34 and later)
 
-Whether you're a seasoned developer or just starting, this script will guide you through the installation steps for each of these projects. You’ll benefit from the latest features and updates without the hassle of manual configuration.
-
 ## Getting Started
 
-To begin, simply run the installer script in your terminal. The menu will guide you through the installation process, allowing you to choose your desired project and installation method. The options are straightforward, ensuring a smooth user experience.
+To begin, follow these steps:
 
-## Usage
+1. **Download the Installer**:
+   - Clone the repository or download the `install.sh` script directly.
 
-After running the script, follow the prompts to select what you wish to install. The installer will handle all necessary dependencies and configurations, so you can focus on building your application rather than worrying about setup issues.
+2. **Make the Script Executable**:
+   ```bash
+   chmod +x installer.sh
+   ```
+3. Run the Installer:
+   - Use the following command to start the installation process:
+```bash
+./install.sh hydren
+```
 
-## Contribution
+# Tutorial
+- Select an Option: After running the installer, you will be presented with a menu of installation options. Choose the project you wish to install by entering the corresponding number (1-4).
 
+- Choose Installation Method: Once you select a project, you will be prompted to choose an installation method. The current option is to install locally, but you can also exit if needed.
+
+- Follow Prompts: Depending on your choices, the installer will execute the necessary commands to set up the selected project. Follow any prompts, such as entering configuration commands for Skyportd.
+
+- Completion: After the installation process, the console will clear, and you will be returned to the main menu for further installations or exit.
+
+- Enjoy Your Setup: Once installed, you can start using your new hosting tools immediately!
+
+# Contribution
 Feel free to contribute to this project! Your feedback and contributions are welcome to improve the installation process and expand support for additional projects.
 
-## License
-
+# License
 This project is open-source and available under the MIT License. Enjoy hassle-free hosting with our installer!
 
-## Conclusion
-
+Conclusion
 With the **🌐 Hydren Hosting Installer**, you can easily set up essential tools to enhance your development workflow. Say goodbye to complicated setups and hello to a streamlined installation experience!
