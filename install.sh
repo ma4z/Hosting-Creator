@@ -82,10 +82,10 @@ run_installer() {
                 display_installation_method_menu "HydrenDashboard-with-Skyport"
                 case $method_choice in
                     1)
-                        echo "Installing HydrenDashboard ..."
-                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
                         echo "Installing Skyport"
                         bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
+                        echo "Installing HydrenDashboard ..."
+                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
                         ;;
                     2)
                         exit
