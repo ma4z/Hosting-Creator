@@ -25,7 +25,6 @@ display_installation_method_menu() {
 
 run_installer() {
     while true; do
-        clear
         display_main_menu
         case $choice in
             1)
