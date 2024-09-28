@@ -35,11 +35,19 @@ npm install
 
 echo_message "* Installed Files"
 
+# Prompt for user details
+echo_message "Please enter the username:"
+read username
+echo_message "Please enter the email:"
+read email
+echo_message "Please enter the password:"
+read password  # -s flag for silent input
+
 echo_message "* Starting Skyport"
 
 # Run setup scripts
 npm run seed
-npm run createUser
+npm run createUser -- --username="$username" --email="$email" --password="$password"
 
 echo_message "* Starting Skyport With PM2"
 
