@@ -33,7 +33,7 @@ run_installer() {
                 case $method_choice in
                     1)
                         cd ~
-                        bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
+                        bash <(curl -s https://raw.githubusercontent.com/ma4z/Hosting-Creator/main/installers/skyport.sh)
                         ;;
                     2)
                         exit
@@ -68,7 +68,7 @@ run_installer() {
                 case $method_choice in
                     1)
                         echo "Installing HydrenDashboard ..."
-                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
+                        bash <(curl -s https://raw.githubusercontent.com/ma4z/Hosting-Creator/main/installers/hydren.sh)
                         ;;
                     2)
                         exit
@@ -83,9 +83,9 @@ run_installer() {
                 case $method_choice in
                     1)
                         echo "Installing Skyport"
-                        bash <(curl -s https://raw.githubusercontent.com/hydrenlabs/Skyport-Installer/main/install.sh)
+                        bash <(curl -s https://raw.githubusercontent.com/ma4z/Hosting-Creator/main/installers/skyport.sh)
                         echo "Installing HydrenDashboard ..."
-                        bash <(curl -s https://raw.githubusercontent.com/hydren-dev/HydrenDashboard-Installer/main/install.sh)
+                        bash <(curl -s https://raw.githubusercontent.com/ma4z/Hosting-Creator/main/installers/hydren.sh)
                         ;;
                     2)
                         exit
