@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # Function to display messages
 echo_message() {
     echo -e "\033[1;32m$1\033[0m"
