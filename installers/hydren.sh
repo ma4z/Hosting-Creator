@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 # Check if Node.js, npm, and git are installed
 if ! command -v git &> /dev/null
 then
